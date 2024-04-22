@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+# React Users Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a Single Page Application (SPA) developed using React, showcasing various React skills such as hooks, lifecycles, state management, Webpack optimization, and web performance.
 
-## Available Scripts
+## How to Run the Project
 
-In the project directory, you can run:
+1. **Clone the repository:**
+   ```
+   git clone https://github.com/devmaaa/user_project
+   cd user_project
+   ```
 
-### `npm start`
+2. **Install dependencies:**
+   ```
+   npm install
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. **Run the development server:**
+   ```
+   npm run start
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. **Open the browser:**
+   Visit `http://localhost:3000` in your browser to view the application.
 
-### `npm test`
+## How to Build the Project for Production
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Build the project:**
+   ```
+   npm run build
+   ```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Open the browser:**
+   Visit `http://localhost:5000` in your browser to view the production build of the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Analyzing Webpack Bundle Size
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To analyze the webpack bundle size, you can use the following script:
 
-### `npm run eject`
+```
+npm run build:analyze
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This script will build the project with webpack bundle analyzer enabled. After the build process is completed, it will automatically open a new tab in your default browser showing the webpack bundle analyzer report, which provides insights into the size of the generated bundles and their dependencies.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## SPA Features
+### Theme Switcher with dark and light mode , with animations
+### User List Page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Displays users with Name, Email, Age.
+- Pagination and sorting options available.
+- Search users by name.
+- Skeleton Animations when navigating between pages.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### User Details Page
 
-## Learn More
+- Shows detailed user information: Full Name, Email, Age, Address, Profile Picture..
+- Back button for easy navigation.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Home Page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Dynamic content fetched from an API (like JSONPlaceholder).
+- Users can add, delete, and list items (e.g., tasks, notes)..
+
+## Design Decisions
+
+- **Routes/Pages**: The application consists of three main routes/pages: Home, User List Page, and User Details Page. Each route is implemented as a separate component to maintain code modularity and readability.
+
+- **TypeScript**: The entire application is written in TypeScript to leverage its static typing benefits. Interfaces and types are utilized extensively for ensuring strong typing throughout the application.
+
+- **React Features**: React hooks like `useState`, `useEffect`, and `useMemo` are used effectively throughout the application for state management and side effect handling. React Router is used for navigation between different pages.
+
+- **State Management**: Context API is chosen as the state management tool for its simplicity and suitability for small to medium-sized applications. A theme switcher (light/dark mode) is implemented using Context API.
+
+- **Performance Optimization**: Code-splitting, memoization, and optimization of render-blocking resources are implemented to improve performance. Webpack is customized to optimize the final bundle size.
+
+- **Extras**: Styled-components is used for styling to enable component-level styling and better code maintainability. The application is designed to be responsive, ensuring a consistent user experience across different devices. Error boundaries are implemented for better error handling.
