@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../services/userService";
 import ErrorBoundary from "../../hoc/ErrorBoundary";
-import { Github } from "lucide-react";
 
 interface UserCardProps {
   user: User;
@@ -11,8 +10,8 @@ interface UserCardProps {
 
 const Card = styled.div`
   display: flex;
-  width:min(180px, 100%);
-  flex-direction:column;
+  width: min(180px, 100%);
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 16px;
@@ -22,7 +21,7 @@ const Card = styled.div`
   color: ${({ theme }) => theme.colors.text};
   @media screen and (max-width: 468px) {
     width: 100%;
-    flex-direction:row;
+    flex-direction: row;
   }
 `;
 
@@ -30,10 +29,10 @@ const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   @media screen and (max-width: 468px) {
-    flex-direction:row;
-    flex:1;
+    flex-direction: row;
+    flex: 1;
     justify-content: space-around;
   }
 `;
@@ -59,16 +58,9 @@ const UserAvatar = styled.img`
 `;
 
 const UserName = styled.div`
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
-`;
-
-const GitHubLink = styled.a`
-  color: ${({ theme }) => theme.colors.link};
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+  margin: 10px 0;
 `;
 
 export const UserCard: React.FC<UserCardProps> = ({ user }) => {
@@ -84,9 +76,6 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
         <UserInfo>
           <UserAvatar src={user.avatar_url} alt={`${user.login}'s avatar`} />
           <UserName>{user.login}</UserName>
-          <GitHubLink href={user.html_url} target="_blank">
-            <Github width="16"/>
-          </GitHubLink>
         </UserInfo>
         <ActionButton onClick={viewDetails}>View Details</ActionButton>
       </Card>

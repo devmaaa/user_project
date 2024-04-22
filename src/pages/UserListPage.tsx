@@ -39,7 +39,7 @@ const UserListPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [usersPerPage] = useState(10);
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
-  const [userStack, setUserStack] = useState<number[]>([]);
+ 
 
   const fetchUsersForPage = async (page: number) => {
     const controller = new AbortController();

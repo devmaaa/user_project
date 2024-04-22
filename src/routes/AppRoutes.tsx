@@ -2,6 +2,7 @@ import { ComponentType, lazy, LazyExoticComponent } from "react";
 
 const HomePage = lazy(() => import("../pages/HomePage"));
 const UserListPage = lazy(() => import("../pages/UserListPage"));
+const UserDetailsPage = lazy(() => import("../pages/UserDetailsPage"));
 
 export enum RoutePaths {
   Home = "/",
@@ -15,7 +16,7 @@ const getComponentName = (component: ComponentType) => {
 
 const createRoute = (
   path: RoutePaths,
-  component: LazyExoticComponent<ComponentType<any>>
+  component: LazyExoticComponent<ComponentType<any>>,
 ) => ({
   path,
   component,
@@ -23,8 +24,9 @@ const createRoute = (
 });
 
 const routes = [
-    createRoute(RoutePaths.Home, HomePage),
-    createRoute(RoutePaths.UserList, UserListPage),
+  createRoute(RoutePaths.Home, HomePage),
+  createRoute(RoutePaths.UserList, UserListPage),
+  createRoute(RoutePaths.UserDetails, UserDetailsPage),
 ];
 
 export default routes;
