@@ -26,19 +26,26 @@ const Title = styled.h1`
 `;
 
 const Input = styled.input`
+  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.text};
   padding: 10px;
   margin-right: 10px;
-  border: 2px solid ${({ theme }) => theme.colors.primary};
+  border: 2px solid ${({ theme }) => theme.colors.button.border};
   border-radius: 5px;
 `;
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
-  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: ${({ theme }) => theme.colors.button.background};
+  color: ${({ theme }) => theme.colors.button.text};
+  border: 1px solid ${({ theme }) => theme.colors.button.border};
   border-radius: 5px;
   cursor: pointer;
+  &:hover{
+    background-color:${({ theme }) => theme.colors.button.backgroundHover};
+    transition: background-color 0.3s ease;
+  }
 `;
 
 const HomePage: FC = () => {

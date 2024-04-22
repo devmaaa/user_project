@@ -11,10 +11,15 @@ declare module "styled-components" {
       primary: string;
       button: {
         background: string;
+        border:string;
         text: string;
         backgroundHover: string;
         textHover: string;
       };
+      skeletonCard:{
+        gradient: string;
+        background: string;
+      }
     };
   }
 }

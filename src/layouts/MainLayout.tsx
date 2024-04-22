@@ -17,6 +17,9 @@ const ContentArea = styled.main`
   padding: 20px;
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
+  @media screen and (max-width: 468px) {
+   padding:10px;
+  }
 `;
 
 export const MainLayout: React.FC = () => {

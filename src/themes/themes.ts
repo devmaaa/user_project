@@ -12,13 +12,18 @@ export const lightTheme: DefaultTheme = {
     border: "#e5e7eb",
     background: "#FFF",
     text: "#333",
-    primary: "#007BFF",
+    primary: "#09090B",
     button: {
-      background: "#007BFF",
-      text: "#FFF",
-      backgroundHover: "#0056b3",
+      background: "#F3F4F6",
+      border:"#D1D5DB",
+      text: "#09090b",
+      backgroundHover: "#e1e1e1",
       textHover: "#FFF",
     },
+    skeletonCard:{
+      gradient: "linear-gradient(-45deg, #dddddd, #f0f0f0, #dddddd, #f0f0f0)",
+      background: "#f0f0f0"
+    }
   },
 };
 
@@ -29,12 +34,18 @@ export const darkTheme: DefaultTheme = {
     background: "#333",
     border: "#2d2d2d",
     text: "#FFF",
-    primary: "#1A73E8",
+    primary: "#FAFAFA",
     button: {
-      background: "#1A73E8",
-      text: "#333",
-      backgroundHover: "#0f4c81",
-      textHover: "#FFF",
+      background: "#29292b",
+      border:"#171717",
+      text: "#fafafa",
+      backgroundHover: "#171717",
+      textHover: "#333",
     },
+    skeletonCard:{
+      gradient: "linear-gradient(-45deg, #333333, #555555, #333333, #555555)",
+      background: "#2e2e2e"
+    }
+    
   },
 };
