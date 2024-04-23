@@ -4,6 +4,7 @@ import { Suspense, useId } from "react";
 import { ThemeSwitcherProvider } from "./themes/ThemeSwitcher";
 import routes from "./routes/AppRoutes";
 import ErrorBoundary from "./hoc/ErrorBoundary";
+import Spinner from './components/atoms/Spinner';
 
 function App() {
   const generateId = useId();
@@ -12,7 +13,7 @@ function App() {
       <ThemeSwitcherProvider>
         <Router>
           <div>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner/>}>
               <Routes>
                 <Route path="/" element={<MainLayout />}>
                   {routes.map(({ path, component: Component, name }) => (

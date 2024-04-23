@@ -1,46 +1,25 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "../components/atoms/Button";
 import { fetchUserDetails, UserDetails } from "../services/userService";
-import { ArrowLeft, ExternalLink,MapPin  } from "lucide-react";
-import styled from "styled-components";
+import { ArrowLeft, ExternalLink, MapPin } from "lucide-react";
 import ErrorBoundary from "../hoc/ErrorBoundary";
-
-const DetailsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.text};
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-`;
-
-const DetailItem = styled.div`
-text-align:center;
-  margin-bottom: 10px;
-`;
-const TinyText = styled.p`
-  margin:0 0 10px 0; 
-  font-weight:500;
-  font-size:12px;
-`
-const BackButton = styled(Button)`
-  margin-top: 20px;
-`;
-
-const ErrorMessage = styled.div`
-  color: red;
-`;
+import {
+  DetailsContainer,
+  DetailItem,
+  TinyText,
+  BackButton,
+  ErrorMessage,
+} from "../styles/UserDetails.style";
+import Spinner from "../components/atoms/Spinner";
+enum Navigate {
+  Back = -1,
+  Forward = 1,
+}
 
 const UserDetailsPage: React.FC = () => {
-  const { userId, username } = useParams<{
-    userId: string;
+  const { username } = useParams<{
     username: string;
   }>();
-
 
   const [user, setUser] = useState<UserDetails | null>(null);
   console.log("user", user);
@@ -57,30 +36,30 @@ const UserDetailsPage: React.FC = () => {
         }
       } catch (error) {
         console.error("Failed to fetch user details", error);
-        setError("User not found"); // Set error message if user details are not found
+        setError("User not found"); 
       }
     };
 
     fetchDetails();
-  }, [userId]);
+  }, [username]);
 
   if (error) {
     return (
       <DetailsContainer>
         <ErrorMessage>{error}</ErrorMessage>
-        <BackButton onClick={() => navigate(-1)}>Go Back</BackButton>
+        <BackButton onClick={() => navigate(Navigate.Back)}>Go Back</BackButton>
       </DetailsContainer>
     );
   }
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <Spinner/>;
   }
 
   return (
     <ErrorBoundary>
       <DetailsContainer>
-        <BackButton onClick={() => navigate(-1)}>
+        <BackButton onClick={() => navigate(Navigate.Back)}>
           <ArrowLeft />
         </BackButton>
         <DetailItem>
@@ -91,12 +70,13 @@ const UserDetailsPage: React.FC = () => {
           />
         </DetailItem>
         <DetailItem>
-          <MapPin /><br/> 
+          <MapPin />
+          <br />
           <TinyText>{user.location}</TinyText>
           {user.name}
           <p>{user.email}</p>
-          </DetailItem>
-          <DetailItem>
+        </DetailItem>
+        <DetailItem>
           <p>{user.bio}</p>
         </DetailItem>
         <DetailItem>

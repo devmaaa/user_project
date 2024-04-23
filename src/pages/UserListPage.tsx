@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { SearchBar } from "../components/molecules/SearchBar";
 import { UserCard } from "../components/molecules/UserCard";
 import { fetchUsers, User } from "../services/userService";
 import { Button } from "../components/atoms/Button";
 import ErrorBoundary from "../hoc/ErrorBoundary";
-import SkeletonCard from "../components/atoms/SkeletonCard";
+import SkeletonCard from "../components/molecules/SkeletonCard";
 import { ArrowUpAZ, ArrowDownAZ } from "lucide-react";
 
 
@@ -27,7 +27,7 @@ const UserList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
     height:70vh;
     overflow-x:auto;
   }
@@ -41,7 +41,7 @@ const UserListPage: React.FC = () => {
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
  
 
-  const fetchUsersForPage = async (page: number) => {
+  const fetchUsersForPage = useCallback(async (page: number) => {
     const controller = new AbortController();
     const signal = controller.signal;
 
@@ -63,7 +63,7 @@ const UserListPage: React.FC = () => {
     return () => {
       controller.abort();
     };
-  };
+  },[usersPerPage]);
 
   useEffect(() => {
     let cleanupFunction: () => void | undefined;
@@ -77,7 +77,7 @@ const UserListPage: React.FC = () => {
     return () => {
       if (cleanupFunction) cleanupFunction();
     };
-  }, []);
+  }, [fetchUsersForPage]);
 
   const handleSearch = async (query: string) => {
     setIsLoading(true);

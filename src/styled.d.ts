@@ -3,6 +3,16 @@ import "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     mode: string;
+    breakpoints: {
+      small: string;
+      medium: string;
+      large: string;
+      extraLarge: string;
+    },
+    spinner:{
+      background: string;
+      gradient_color: string;
+    }
     colors: {
       link: string;
       background: string;

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../services/userService";
@@ -19,7 +18,7 @@ const Card = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 100%;
     flex-direction: row;
   }
@@ -30,7 +29,7 @@ const UserInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
     flex-direction: row;
     flex: 1;
     justify-content: space-around;

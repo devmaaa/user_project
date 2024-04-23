@@ -37,7 +37,7 @@ const Ball = styled.span<BallProps>`
   top: 3px;
   background-color: #fff;
   border-radius: 50%;
-  transition: transform 0.2s ease; /* Update transition property */
+  transition: transform 0.2s ease;
   transform: translateX(${(props) => (props.checked ? "30px" : "2px")});
 `;
 

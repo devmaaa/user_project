@@ -1,15 +1,14 @@
-import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const pulsateAnimation = keyframes`
   0% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
   50% {
     background-position: 100% 50%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
 `;
 const Pulsate = styled.div`
@@ -20,7 +19,6 @@ const Pulsate = styled.div`
 const SkeletonContainer = styled.div`
   max-height: 167px;
   background-color: ${({ theme }) => theme.colors.skeletonCard.background};
-  border-radius: 5px;
   margin-bottom: 10px;
   display: flex;
   width: min(180px, 100%);
@@ -29,7 +27,7 @@ const SkeletonContainer = styled.div`
   align-items: center;
   padding: 16px;
   border-radius: 8px;
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 100%;
     flex-direction:row;
     max-height:82px;

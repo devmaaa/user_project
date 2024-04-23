@@ -14,17 +14,9 @@ export interface UserDetails {
   email: string | null;
   location: string | null;
   bio: string | null;
-  public_repos: number;
-  followers: number;
-  following: number;
 }
 
-export interface PaginationLinks {
-  next?: string;
-  prev?: string;
-  first?: string;
-  last?: string;
-}
+
 
 const BASE_URL = "https://api.github.com/users";
 

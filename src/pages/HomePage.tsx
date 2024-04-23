@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC, useId } from "react";
+import { useState, useEffect,useId } from "react";
 import {
   HomePageContainer,
   ContentBlock,
@@ -8,15 +8,18 @@ import {
 } from "../styles/Home.styles";
 import { deleteTodo, fetchTodos, Todo } from "../services/todoService";
 import ErrorBoundary from "../hoc/ErrorBoundary";
-
-const HomePage: FC = () => {
+const LOCAL_STORAGE_TODOS = "todos";
+const TODOS_LIMIT = 5;
+const HomePage: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const generateId = useId();
 
   useEffect(() => {
-    const localTodos = localStorage.getItem("todos");
-    if (localTodos && JSON.parse(localTodos).length > 0) {
-      setTodos(JSON.parse(localTodos));
+    const localTodos = localStorage.getItem(LOCAL_STORAGE_TODOS);
+    const parsedTodos = localTodos ? JSON.parse(localTodos) : [];
+    const hasTodos = Array.isArray(parsedTodos) && parsedTodos.length > 0;
+    if (hasTodos) {
+      setTodos(parsedTodos);
     } else {
       fetchAndSetTodos();
     }
@@ -24,9 +27,9 @@ const HomePage: FC = () => {
 
   const fetchAndSetTodos = async () => {
     try {
-      const fetchedTodos = await fetchTodos(5); // Fetch only first 5 for demo
+      const fetchedTodos = await fetchTodos(TODOS_LIMIT); 
       setTodos(fetchedTodos);
-      localStorage.setItem("todos", JSON.stringify(fetchedTodos));
+      localStorage.setItem(LOCAL_STORAGE_TODOS, JSON.stringify(fetchedTodos));
     } catch (error) {
       console.error("Failed to fetch todos:", error);
     }
@@ -38,12 +41,12 @@ const HomePage: FC = () => {
       const newTodo = {
         id: `${generateId}-${Date.now()}`,
         title: inputValue,
-        completed: false, // Assuming todos have a completed status
+        completed: false, 
       };
 
       const newTodos = [newTodo, ...todos];
       setTodos(newTodos);
-      localStorage.setItem("todos", JSON.stringify(newTodos));
+      localStorage.setItem(LOCAL_STORAGE_TODOS, JSON.stringify(newTodos));
       setInputValue("");
     } catch (error) {
       console.error("Failed to add todo:", error);
@@ -56,9 +59,9 @@ const HomePage: FC = () => {
       const filteredTodos = todos.filter((todo) => todo.id !== id);
       setTodos(filteredTodos);
       if (filteredTodos.length === 0) {
-        fetchAndSetTodos(); // Fetch new todos if list is empty after deletion
+        fetchAndSetTodos(); 
       } else {
-        localStorage.setItem("todos", JSON.stringify(filteredTodos));
+        localStorage.setItem(LOCAL_STORAGE_TODOS, JSON.stringify(filteredTodos));
       }
     } catch (error) {
       console.error("Failed to delete todo:", error);
