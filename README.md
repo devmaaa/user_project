@@ -2,6 +2,15 @@
 
 This project is a Single Page Application (SPA) developed using React, showcasing various React skills such as hooks, lifecycles, state management, Webpack optimization, and web performance.
 
+## Performance Metrics
+
+The application has been assessed using Lighthouse, a tool for evaluating web page quality, and achieved the following scores:
+
+- Performance: 93
+- Accessibility: 100
+- Best Practices: 100
+- SEO: 100
+
 ## How to Run the Project
 
 1. **Clone the repository:**
