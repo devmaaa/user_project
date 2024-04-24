@@ -2,8 +2,10 @@ import { useState, useEffect, useId } from 'react';
 import { HomePageContainer, ContentBlock, Title, Input, Button } from './Home.style';
 import { deleteTodo, fetchTodos, Todo } from '../../services/todoService';
 import ErrorBoundary from '../../hoc/ErrorBoundary';
+
 const LOCAL_STORAGE_TODOS = 'todos';
 const TODOS_LIMIT = 5;
+
 const HomePage: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const generateId = useId();

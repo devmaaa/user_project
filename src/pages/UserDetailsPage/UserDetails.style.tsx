@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../components/atoms/';
+
 export const DetailsHeader = styled.div`
   display: flex;
   margin: 10px 0;

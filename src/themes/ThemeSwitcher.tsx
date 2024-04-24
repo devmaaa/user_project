@@ -59,6 +59,7 @@ export const ThemeSwitcherProvider: React.FC<ThemeProviderProps> = ({ children }
   }, [theme.mode]);
 
   const value = React.useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
+
   return (
     <ThemeContext.Provider value={value}>
       <ThemeProvider theme={theme}>

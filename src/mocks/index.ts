@@ -1,5 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 import { User } from '../services/userService';
+
 export enum ThemeModes {
   LIGHT = 'light',
   DARK = 'dark',
