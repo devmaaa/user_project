@@ -4,15 +4,18 @@ import { DefaultTheme, ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 
 interface ThemeContextType {
-  theme: DefaultTheme; // Update to use DefaultTheme from styled-components
+  theme: DefaultTheme;
   toggleTheme: () => void;
 }
 
 interface ThemeProviderProps {
   children: React.ReactNode;
 }
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const defaultContextValue: ThemeContextType = {
+  theme: lightTheme,
+  toggleTheme: () => {},
+};
+const ThemeContext = createContext<ThemeContextType>(defaultContextValue);
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
@@ -40,7 +43,7 @@ const getStoredTheme = (): DefaultTheme | null => {
 
 const setStoredTheme = (theme: DefaultTheme): void => {
   try {
-    localStorage.setItem("theme", theme.mode); // Store theme.mode in local storage
+    localStorage.setItem("theme", theme.mode); 
   } catch (error) {
     console.error("Error writing theme to localStorage:", error);
   }

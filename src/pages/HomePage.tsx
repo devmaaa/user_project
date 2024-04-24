@@ -5,7 +5,7 @@ import {
   Title,
   Input,
   Button,
-} from "../styles/Home.styles";
+} from "../styles/Home.style";
 import { deleteTodo, fetchTodos, Todo } from "../services/todoService";
 import ErrorBoundary from "../hoc/ErrorBoundary";
 const LOCAL_STORAGE_TODOS = "todos";

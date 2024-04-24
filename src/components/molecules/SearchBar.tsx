@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FC } from "react";
 import styled from "styled-components";
 
-interface SearchBarProps {
+interface SearchBarProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onSearch: (query: string) => void;
 }
 

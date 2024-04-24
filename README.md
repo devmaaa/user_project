@@ -34,6 +34,14 @@ This project is a Single Page Application (SPA) developed using React, showcasin
 2. **Open the browser:**
    Visit `http://localhost:5000` in your browser to view the production build of the application.
 
+## Running Tests
+
+To run the tests for this project, you can use the following script:   
+
+   ```
+   npm run start
+   ```
+
 ## Analyzing Webpack Bundle Size
 
 To analyze the webpack bundle size, you can use the following script:

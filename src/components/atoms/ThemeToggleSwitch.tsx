@@ -53,7 +53,7 @@ export const ThemeToggle: React.FC = () => {
         checked={theme.mode === ThemeModes.DARK}
         onChange={handleToggleTheme}
       />
-      <ToggleLabel htmlFor="checkbox" className="checkbox-label">
+      <ToggleLabel htmlFor="checkbox" className="theme-mode-label"  data-testid='themeMode'>
         <Sun color="#f39c12" width="14" />
         <Moon color="#f1c40f" width="14" />
         <Ball className="ball" checked={theme.mode === ThemeModes.DARK} />

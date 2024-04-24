@@ -22,7 +22,7 @@ const UserDetailsPage: React.FC = () => {
   }>();
 
   const [user, setUser] = useState<UserDetails | null>(null);
-  console.log("user", user);
+
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ const UserDetailsPage: React.FC = () => {
         }
       } catch (error) {
         console.error("Failed to fetch user details", error);
-        setError("User not found"); 
+        setError("User not found");
       }
     };
 
@@ -53,7 +53,7 @@ const UserDetailsPage: React.FC = () => {
   }
 
   if (!user) {
-    return <Spinner/>;
+    return <Spinner />;
   }
 
   return (
