@@ -1,10 +1,4 @@
-import {
-  SkeletonContainer,
-  Avatar,
-  UserInfo,
-  UserName,
-  ActionButton,
-} from "../../styles/SkeletonCard.style";
+import { SkeletonContainer, Avatar, UserInfo, UserName, ActionButton } from './SkeletonCard.style';
 const SkeletonCard: React.FC = () => {
   return (
     <SkeletonContainer>

@@ -1,0 +1,12 @@
+# Directories
+node_modules/
+test-results/
+coverage/
+config/
+scripts/
+# Specific file types or patterns
+**/*.mdx
+
+# files
+package-lock.json
+.prettierrc

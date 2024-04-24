@@ -1,12 +1,11 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-import { Header } from "./Header";
-import { lightTheme } from "../../mocks";
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { Header } from './index';
+import { lightTheme } from '../../../mocks';
 
-describe("Header", () => {
-  it("renders navigation links correctly", () => {
+describe('Header', () => {
+  it('renders navigation links correctly', () => {
     render(
       <ThemeProvider theme={lightTheme}>
         <Router>
@@ -23,14 +22,6 @@ describe("Header", () => {
   });
 
   it("applies 'active' class to the active link", () => {
-
-    jest.mock('react-router-dom', () => ({
-      ...jest.requireActual('react-router-dom'),
-      useLocation: () => ({
-        pathname: '/home'
-      })
-    }));
-
     render(
       <ThemeProvider theme={lightTheme}>
         <Router>
@@ -42,6 +33,4 @@ describe("Header", () => {
     const homeLink = screen.getByRole('link', { name: /home/i });
     expect(homeLink).toHaveClass('active');
   });
-
-
 });

@@ -69,7 +69,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "build:analyze": "cross-env ANALYZE=true node scripts/build.js",
-    "test": "node scripts/test.js --watchAll=false --verbose"
+    "test": "node scripts/test.js --watchAll=false --verbose",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -147,6 +148,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "prettier": "^3.2.5",
     "webpack-bundle-analyzer": "^4.10.2"
   }
 }

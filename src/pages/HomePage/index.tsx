@@ -1,14 +1,8 @@
-import { useState, useEffect,useId } from "react";
-import {
-  HomePageContainer,
-  ContentBlock,
-  Title,
-  Input,
-  Button,
-} from "../styles/Home.style";
-import { deleteTodo, fetchTodos, Todo } from "../services/todoService";
-import ErrorBoundary from "../hoc/ErrorBoundary";
-const LOCAL_STORAGE_TODOS = "todos";
+import { useState, useEffect, useId } from 'react';
+import { HomePageContainer, ContentBlock, Title, Input, Button } from './Home.style';
+import { deleteTodo, fetchTodos, Todo } from '../../services/todoService';
+import ErrorBoundary from '../../hoc/ErrorBoundary';
+const LOCAL_STORAGE_TODOS = 'todos';
 const TODOS_LIMIT = 5;
 const HomePage: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -27,11 +21,11 @@ const HomePage: React.FC = () => {
 
   const fetchAndSetTodos = async () => {
     try {
-      const fetchedTodos = await fetchTodos(TODOS_LIMIT); 
+      const fetchedTodos = await fetchTodos(TODOS_LIMIT);
       setTodos(fetchedTodos);
       localStorage.setItem(LOCAL_STORAGE_TODOS, JSON.stringify(fetchedTodos));
     } catch (error) {
-      console.error("Failed to fetch todos:", error);
+      console.error('Failed to fetch todos:', error);
     }
   };
 
@@ -41,15 +35,15 @@ const HomePage: React.FC = () => {
       const newTodo = {
         id: `${generateId}-${Date.now()}`,
         title: inputValue,
-        completed: false, 
+        completed: false,
       };
 
       const newTodos = [newTodo, ...todos];
       setTodos(newTodos);
       localStorage.setItem(LOCAL_STORAGE_TODOS, JSON.stringify(newTodos));
-      setInputValue("");
+      setInputValue('');
     } catch (error) {
-      console.error("Failed to add todo:", error);
+      console.error('Failed to add todo:', error);
     }
   };
 
@@ -59,16 +53,16 @@ const HomePage: React.FC = () => {
       const filteredTodos = todos.filter((todo) => todo.id !== id);
       setTodos(filteredTodos);
       if (filteredTodos.length === 0) {
-        fetchAndSetTodos(); 
+        fetchAndSetTodos();
       } else {
         localStorage.setItem(LOCAL_STORAGE_TODOS, JSON.stringify(filteredTodos));
       }
     } catch (error) {
-      console.error("Failed to delete todo:", error);
+      console.error('Failed to delete todo:', error);
     }
   };
 
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
 
   return (
     <ErrorBoundary>

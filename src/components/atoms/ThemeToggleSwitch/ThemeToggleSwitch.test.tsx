@@ -1,10 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { ThemeToggle } from "./ThemeToggleSwitch";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "../../mocks";
+import { render, screen, fireEvent } from '@testing-library/react';
+import { ThemeToggle } from './index';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from '../../../mocks';
 
-describe("ThemeToggle", () => {
-  it("starts in light mode and switches to dark on click", () => {
+describe('ThemeToggle', () => {
+  it('starts in light mode and switches to dark on click', () => {
     render(
       <ThemeProvider theme={lightTheme}>
         <ThemeToggle />

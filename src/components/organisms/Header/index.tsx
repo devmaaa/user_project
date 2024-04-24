@@ -1,10 +1,6 @@
-import { RoutePaths } from "../../routes/AppRoutes";
-import { ThemeToggle } from "../atoms/ThemeToggleSwitch";
-import {
-  HeaderContainer,
-  NavLinks,
-  NavLinkStyled,
-} from "../../styles/Header.style";
+import { RoutePaths } from '../../../routes/AppRoutes';
+import { ThemeToggle } from '../../atoms/ThemeToggleSwitch/';
+import { HeaderContainer, NavLinks, NavLinkStyled } from './Header.style';
 
 export const Header: React.FC = () => {
   return (
@@ -13,13 +9,13 @@ export const Header: React.FC = () => {
         <NavLinkStyled
           to={RoutePaths.Home}
           end
-          className={({ isActive }) => (isActive ? "active" : undefined)}
+          className={({ isActive }) => (isActive ? 'active' : undefined)}
         >
           Home
         </NavLinkStyled>
         <NavLinkStyled
           to={RoutePaths.UserList}
-          className={({ isActive }) => (isActive ? "active" : undefined)}
+          className={({ isActive }) => (isActive ? 'active' : undefined)}
         >
           User List
         </NavLinkStyled>

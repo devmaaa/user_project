@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { fetchUserDetails, UserDetails } from "../services/userService";
-import { ArrowLeft, ExternalLink, MapPin } from "lucide-react";
-import ErrorBoundary from "../hoc/ErrorBoundary";
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { fetchUserDetails, UserDetails } from '../../services/userService';
+import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react';
+import ErrorBoundary from '../../hoc/ErrorBoundary';
 import {
   DetailsContainer,
   DetailItem,
   TinyText,
   BackButton,
   ErrorMessage,
-} from "../styles/UserDetails.style";
-import Spinner from "../components/atoms/Spinner";
+} from './UserDetails.style';
+import Spinner from '../../components/atoms/Spinner/';
+
 enum Navigate {
   Back = -1,
-  Forward = 1,
 }
 
 const UserDetailsPage: React.FC = () => {
@@ -35,8 +35,8 @@ const UserDetailsPage: React.FC = () => {
           setError(null);
         }
       } catch (error) {
-        console.error("Failed to fetch user details", error);
-        setError("User not found");
+        console.error('Failed to fetch user details', error);
+        setError('User not found');
       }
     };
 
@@ -66,7 +66,7 @@ const UserDetailsPage: React.FC = () => {
           <img
             src={user.avatar_url}
             alt={`${user.login}'s profile`}
-            style={{ width: "100px", height: "100px", borderRadius: "50%" }}
+            style={{ width: '100px', height: '100px', borderRadius: '50%' }}
           />
         </DetailItem>
         <DetailItem>

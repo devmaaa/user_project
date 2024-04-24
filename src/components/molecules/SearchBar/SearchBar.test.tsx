@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { SearchBar } from './SearchBar';
+import { SearchBar } from './index';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from '../../mocks';
+import { lightTheme } from '../../../mocks';
 
 describe('SearchBar', () => {
   it('renders an input element', () => {
@@ -24,5 +24,4 @@ describe('SearchBar', () => {
     fireEvent.change(input, { target: { value: 'John Doe' } });
     expect(handleSearchMock).toHaveBeenCalledWith('John Doe');
   });
-
 });

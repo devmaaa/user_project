@@ -1,7 +1,7 @@
 import { render, fireEvent, screen } from '@testing-library/react';
-import { Button } from './Button';
+import { Button } from '.';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme } from '../../mocks';
+import { lightTheme } from '../../../mocks';
 
 describe('Button', () => {
   it('renders children correctly', () => {
@@ -45,4 +45,3 @@ describe('Button', () => {
     fireEvent.mouseOver(button);
   });
 });
-

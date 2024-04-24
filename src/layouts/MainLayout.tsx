@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
-import { Header } from "../components/organisms/Header";
+import { useState, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
+import { Header } from '../components/organisms/Header/';
 
 const fadeIn = keyframes`
   from {
@@ -54,11 +54,11 @@ const ContentArea = styled.main`
 
 export const MainLayout: React.FC = () => {
   const location = useLocation();
-  const [animationClass, setAnimationClass] = useState("");
+  const [animationClass, setAnimationClass] = useState('');
 
   useEffect(() => {
     const currentPath = location.pathname;
-    const animationName = currentPath === "/" ? "fade-enter" : "fade-exit";
+    const animationName = currentPath === '/' ? 'fade-enter' : 'fade-exit';
     setAnimationClass(animationName);
   }, [location]);
 

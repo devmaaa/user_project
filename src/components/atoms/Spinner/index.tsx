@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
 const pillerPushUp = keyframes`
   0%, 40%, 100% {
@@ -71,25 +71,32 @@ const ballStepUp = keyframes`
 `;
 
 const SpinnerContainer = styled.div`
-
-position: fixed;
+  position: fixed;
   top: 40%;
   left: 50%;
   transform: translate(-40%, -50%);
   width: 75px;
   height: 100px;
   background-repeat: no-repeat;
-  background-image: linear-gradient(${({ theme }) => theme.spinner.gradient_color} 50px, transparent 0),
+  background-image: linear-gradient(
+      ${({ theme }) => theme.spinner.gradient_color} 50px,
+      transparent 0
+    ),
     linear-gradient(${({ theme }) => theme.spinner.gradient_color} 50px, transparent 0),
     linear-gradient(${({ theme }) => theme.spinner.gradient_color} 50px, transparent 0),
     linear-gradient(${({ theme }) => theme.spinner.gradient_color} 50px, transparent 0),
     linear-gradient(${({ theme }) => theme.spinner.gradient_color} 50px, transparent 0);
   background-size: 8px 100%;
-  background-position: 0px 90px, 15px 78px, 30px 66px, 45px 58px, 60px 50px;
+  background-position:
+    0px 90px,
+    15px 78px,
+    30px 66px,
+    45px 58px,
+    60px 50px;
   animation: ${pillerPushUp} 4s linear infinite;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 10px;
     left: 0;

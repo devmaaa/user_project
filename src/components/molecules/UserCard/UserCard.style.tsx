@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const Card = styled.div`
   display: flex;
   width: min(180px, 100%);

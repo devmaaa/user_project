@@ -5,17 +5,20 @@ This project is a Single Page Application (SPA) developed using React, showcasin
 ## How to Run the Project
 
 1. **Clone the repository:**
+
    ```
    git clone https://github.com/devmaaa/user_project
    cd user_project
    ```
 
 2. **Install dependencies:**
+
    ```
    npm install
    ```
 
 3. **Run the development server:**
+
    ```
    npm run start
    ```
@@ -26,21 +29,21 @@ This project is a Single Page Application (SPA) developed using React, showcasin
 ## How to Build the Project for Production
 
 1. **Build the project:**
+
    ```
    npm run build
    ```
-
 
 2. **Open the browser:**
    Visit `http://localhost:5000` in your browser to view the production build of the application.
 
 ## Running Tests
 
-To run the tests for this project, you can use the following script:   
+To run the tests for this project, you can use the following script:
 
-   ```
-   npm run start
-   ```
+```
+npm run test
+```
 
 ## Analyzing Webpack Bundle Size
 
@@ -53,7 +56,9 @@ npm run build:analyze
 This script will build the project with webpack bundle analyzer enabled. After the build process is completed, it will automatically open a new tab in your default browser showing the webpack bundle analyzer report, which provides insights into the size of the generated bundles and their dependencies.
 
 ## SPA Features
+
 ### Theme Switcher with dark and light mode , with animations
+
 ### User List Page
 
 - Displays users with Name, Email, Age.

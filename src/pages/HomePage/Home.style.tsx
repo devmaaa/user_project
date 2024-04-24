@@ -1,9 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
- 
 `;
 
 export const ContentBlock = styled.div`
@@ -39,8 +38,8 @@ export const Button = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.button.border};
   border-radius: 5px;
   cursor: pointer;
-  &:hover{
-    background-color:${({ theme }) => theme.colors.button.backgroundHover};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.button.backgroundHover};
     transition: background-color 0.3s ease;
   }
 `;

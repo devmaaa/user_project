@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const pulsateAnimation = keyframes`
   0% {
@@ -12,7 +12,7 @@ const pulsateAnimation = keyframes`
   }
 `;
 const Pulsate = styled.div`
-  background:${({ theme }) => theme.colors.skeletonCard.gradient};
+  background: ${({ theme }) => theme.colors.skeletonCard.gradient};
   background-size: 400% 400%;
   animation: ${pulsateAnimation} 2.25s ease infinite;
 `;
@@ -29,8 +29,8 @@ export const SkeletonContainer = styled.div`
   border-radius: 8px;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 100%;
-    flex-direction:row;
-    max-height:82px;
+    flex-direction: row;
+    max-height: 82px;
   }
 `;
 
