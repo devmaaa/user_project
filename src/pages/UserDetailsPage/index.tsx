@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchUserDetails, UserDetails } from '../../services/userService';
-import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react';
+import { ArrowLeft,MapPin } from 'lucide-react';
 import ErrorBoundary from '../../hoc/ErrorBoundary';
 import {
   DetailsContainer,
@@ -9,6 +9,8 @@ import {
   TinyText,
   BackButton,
   ErrorMessage,
+  AnchorTag,
+  DetailsHeader
 } from './UserDetails.style';
 import Spinner from '../../components/atoms/Spinner/';
 
@@ -58,33 +60,34 @@ const UserDetailsPage: React.FC = () => {
 
   return (
     <ErrorBoundary>
-      <DetailsContainer>
-        <BackButton onClick={() => navigate(Navigate.Back)}>
-          <ArrowLeft />
-        </BackButton>
-        <DetailItem>
-          <img
-            src={user.avatar_url}
-            alt={`${user.login}'s profile`}
-            style={{ width: '100px', height: '100px', borderRadius: '50%' }}
-          />
-        </DetailItem>
-        <DetailItem>
-          <MapPin />
-          <br />
-          <TinyText>{user.location}</TinyText>
-          {user.name}
-          <p>{user.email}</p>
-        </DetailItem>
-        <DetailItem>
-          <p>{user.bio}</p>
-        </DetailItem>
-        <DetailItem>
-          <a href={user.html_url} target="_blank" rel="noopener noreferrer">
-            <ExternalLink color="#1a1a1a" />
-          </a>
-        </DetailItem>
-      </DetailsContainer>
+      <div>
+        <DetailsHeader>
+          <BackButton onClick={() => navigate(Navigate.Back)}>
+            <ArrowLeft />
+          </BackButton>
+        </DetailsHeader>
+        <DetailsContainer>
+          <DetailItem>
+            <img
+              src={user.avatar_url}
+              alt={`${user.login}'s profile`}
+              style={{ width: '100px', height: '100px', borderRadius: '50%' }}
+            />
+          </DetailItem>
+          <DetailItem>
+            <MapPin />
+            <br />
+            <TinyText>{user.location}</TinyText>
+            <AnchorTag href={user.html_url} target="_blank" rel="noopener noreferrer">
+              {user.name}
+            </AnchorTag>
+            <p>{user.email}</p>
+          </DetailItem>
+          <DetailItem>
+            <p>{user.bio}</p>
+          </DetailItem>
+        </DetailsContainer>
+      </div>
     </ErrorBoundary>
   );
 };
