@@ -1,5 +1,5 @@
 import { SkeletonContainer, Avatar, UserInfo, UserName, ActionButton } from './SkeletonCard.style';
-const SkeletonCard: React.FC = () => {
+export const SkeletonCard: React.FC = () => {
   return (
     <SkeletonContainer>
       <UserInfo>
@@ -10,5 +10,3 @@ const SkeletonCard: React.FC = () => {
     </SkeletonContainer>
   );
 };
-
-export default SkeletonCard;

@@ -108,8 +108,6 @@ const SpinnerContainer = styled.div`
   }
 `;
 
-const Spinner: React.FC = () => {
+export const Spinner: React.FC = () => {
   return <SpinnerContainer />;
 };
-
-export default Spinner;

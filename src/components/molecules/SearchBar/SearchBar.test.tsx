@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { SearchBar } from './index';
+import { SearchBar } from './SearchBar';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../../mocks';
 

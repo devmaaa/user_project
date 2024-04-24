@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import Spinner from './index';
+import { Spinner } from './Spinner';
 import { lightTheme } from '../../../mocks';
 
 describe('Spinner', () => {

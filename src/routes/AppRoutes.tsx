@@ -1,8 +1,8 @@
 import { ComponentType, lazy, LazyExoticComponent } from 'react';
 
-const HomePage = lazy(() => import('../pages/HomePage/'));
-const UserListPage = lazy(() => import('../pages/UserListPage/'));
-const UserDetailsPage = lazy(() => import('../pages/UserDetailsPage/'));
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const UserListPage = lazy(() => import('../pages/UserListPage/UserListPage'));
+const UserDetailsPage = lazy(() => import('../pages/UserDetailsPage/UserDetailsPage'));
 
 export enum RoutePaths {
   Home = '/',

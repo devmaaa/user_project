@@ -2,7 +2,7 @@ import { useTheme } from '../../../themes/ThemeSwitcher';
 import { ThemeModes } from '../../../themes/themes';
 import { useCallback } from 'react';
 import { Sun, Moon } from 'lucide-react';
-import { ToggleLabel, ToggleWrapper, HiddenCheckbox, Ball } from './ThemeToggleSwitch.style';
+import { ToggleLabel, ToggleWrapper, HiddenCheckbox, Ball } from './ThemeToggle.style';
 
 export const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();

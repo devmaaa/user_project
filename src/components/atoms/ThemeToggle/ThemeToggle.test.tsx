@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { ThemeToggle } from './index';
+import { ThemeToggle } from './ThemeToggle';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../../../mocks';
 

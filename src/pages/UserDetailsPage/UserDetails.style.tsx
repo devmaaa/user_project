@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Button } from '../../components/atoms/Button';
+import { Button } from '../../components/atoms/Button/Button';
 export const DetailsHeader = styled.div`
-   display: flex;
-   margin:10px 0;
+  display: flex;
+  margin: 10px 0;
 `;
 export const DetailsContainer = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ export const DetailsContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding:20px;
+  padding: 20px;
 `;
 
 export const DetailItem = styled.div`
@@ -28,7 +28,7 @@ export const BackButton = styled(Button)`
   margin-top: 20px;
 `;
 export const AnchorTag = styled.a`
-  color:${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
 `;
 export const ErrorMessage = styled.div`

@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { UserCard } from './index';
+import { UserCard } from './UserCard';
 import { lightTheme, mockUser } from '../../../mocks';
 
 describe('UserCard', () => {

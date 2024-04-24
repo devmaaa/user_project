@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import SkeletonCard from '../SkeletonCard';
+import { SkeletonCard } from './SkeletonCard';
 import { lightTheme } from '../../../mocks';
 
 describe('SkeletonCard', () => {

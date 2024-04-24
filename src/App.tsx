@@ -4,7 +4,7 @@ import { Suspense, useId } from 'react';
 import { ThemeSwitcherProvider } from './themes/ThemeSwitcher';
 import routes from './routes/AppRoutes';
 import ErrorBoundary from './hoc/ErrorBoundary';
-import Spinner from './components/atoms/Spinner';
+import { Spinner } from './components/atoms/';
 
 function App() {
   const generateId = useId();

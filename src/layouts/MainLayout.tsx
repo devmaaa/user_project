@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-import { Header } from '../components/organisms/Header/';
+import { Header } from '../components/organisms/Header/Header';
 
 const fadeIn = keyframes`
   from {

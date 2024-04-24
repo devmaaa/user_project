@@ -1,5 +1,5 @@
 import { RoutePaths } from '../../../routes/AppRoutes';
-import { ThemeToggle } from '../../atoms/ThemeToggleSwitch/';
+import { ThemeToggle } from '../../atoms/';
 import { HeaderContainer, NavLinks, NavLinkStyled } from './Header.style';
 
 export const Header: React.FC = () => {

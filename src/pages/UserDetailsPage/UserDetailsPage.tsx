@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchUserDetails, UserDetails } from '../../services/userService';
-import { ArrowLeft,MapPin } from 'lucide-react';
+import { ArrowLeft, MapPin } from 'lucide-react';
 import ErrorBoundary from '../../hoc/ErrorBoundary';
 import {
   DetailsContainer,
@@ -10,9 +10,9 @@ import {
   BackButton,
   ErrorMessage,
   AnchorTag,
-  DetailsHeader
+  DetailsHeader,
 } from './UserDetails.style';
-import Spinner from '../../components/atoms/Spinner/';
+import { Spinner } from '../../components/atoms/';
 
 enum Navigate {
   Back = -1,

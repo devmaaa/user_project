@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
-import { SearchBar } from '../../components/molecules/SearchBar';
-import { UserCard } from '../../components/molecules/UserCard';
+import { SearchBar } from '../../components/molecules/SearchBar/SearchBar';
+import { UserCard } from '../../components/molecules/UserCard/UserCard';
 import { fetchUsers, User } from '../../services/userService';
-import { Button } from '../../components/atoms/Button';
+import { Button } from '../../components/atoms/';
 import ErrorBoundary from '../../hoc/ErrorBoundary';
-import SkeletonCard from '../../components/molecules/SkeletonCard';
+import { SkeletonCard } from '../../components/molecules/';
 import { ArrowUpAZ, ArrowDownAZ } from 'lucide-react';
 import { UserListPageContainer, ActionArea, UserList } from './UserListPage.style';
 
