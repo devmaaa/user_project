@@ -16,7 +16,7 @@ function App() {
             <Suspense fallback={<Spinner />}>
               <Routes>
                 <Route path="/" element={<MainLayout />}>
-                  {routes.map(({ path, component: Component, name }) => (
+                  {routes.map(({ path, component: Component }) => (
                     <Route key={generateId} path={path} element={<Component />} />
                   ))}
                 </Route>

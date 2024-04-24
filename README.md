@@ -6,22 +6,22 @@ This project is a Single Page Application (SPA) developed using React, showcasin
 
 1. **Clone the repository:**
 
-   ```
-   git clone https://github.com/devmaaa/user_project
-   cd user_project
+```
+git clone https://github.com/devmaaa/user_project
+cd user_project
    ```
 
 2. **Install dependencies:**
 
-   ```
-   npm install
-   ```
+```
+npm install
+```
 
 3. **Run the development server:**
 
-   ```
-   npm run start
-   ```
+```
+npm run start
+```
 
 4. **Open the browser:**
    Visit `http://localhost:3000` in your browser to view the application.
@@ -30,9 +30,9 @@ This project is a Single Page Application (SPA) developed using React, showcasin
 
 1. **Build the project:**
 
-   ```
-   npm run build
-   ```
+```
+npm run build
+```
 
 2. **Open the browser:**
    Visit `http://localhost:5000` in your browser to view the production build of the application.
@@ -54,6 +54,16 @@ npm run build:analyze
 ```
 
 This script will build the project with webpack bundle analyzer enabled. After the build process is completed, it will automatically open a new tab in your default browser showing the webpack bundle analyzer report, which provides insights into the size of the generated bundles and their dependencies.
+
+## Code Formatting
+
+The codebase follows consistent formatting standards to ensure readability and maintainability. We use Prettier for code formatting with the following configuration:
+
+```
+
+  npm run format
+
+```
 
 ## SPA Features
 

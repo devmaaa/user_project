@@ -18,8 +18,14 @@ export const UserList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 3rem;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    margin-bottom: 0;
     height: 70vh;
     overflow-x: auto;
   }
+`;
+
+export const ListNavArea = styled.div`
+  margin: 20px 0 0 0;
 `;

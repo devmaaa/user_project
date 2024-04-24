@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
-import { SearchBar } from '../../components/molecules/SearchBar/SearchBar';
-import { UserCard } from '../../components/molecules/UserCard/UserCard';
+import { SearchBar } from '../../components/molecules/';
+import { UserCard } from '../../components/molecules/';
 import { fetchUsers, User } from '../../services/userService';
 import { Button } from '../../components/atoms/';
 import ErrorBoundary from '../../hoc/ErrorBoundary';
 import { SkeletonCard } from '../../components/molecules/';
 import { ArrowUpAZ, ArrowDownAZ } from 'lucide-react';
-import { UserListPageContainer, ActionArea, UserList } from './UserListPage.style';
+import { UserListPageContainer, ActionArea, UserList, ListNavArea } from './UserListPage.style';
 
 enum SortingDirection {
   ASC = 'asc',
@@ -121,10 +121,10 @@ const UserListPage: React.FC = () => {
             ? Array.from({ length: 10 }).map((_, index) => <SkeletonCard key={index} />)
             : users.map((user) => <UserCard key={user.id} user={user} />)}
         </UserList>
-        <div>
+        <ListNavArea>
           {currentPage > 1 && !isLoading && <Button onClick={fetchPreviousPage}>Previous</Button>}
           {!isLoading && <Button onClick={fetchNextPage}>Next</Button>}
-        </div>
+        </ListNavArea>
       </UserListPageContainer>
     </ErrorBoundary>
   );
